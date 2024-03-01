@@ -36,7 +36,7 @@ public class ServicioService {
         });
     }
 
-    public String getService(String serviceId) {
+    public String getService(int serviceId) {
         String sql = "SELECT nombre FROM servicio WHERE id=?";
         try {
             return jdbcTemplate.queryForObject(sql, String.class, serviceId);

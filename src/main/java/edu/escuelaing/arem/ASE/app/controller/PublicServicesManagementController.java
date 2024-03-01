@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/services")
+@CrossOrigin(origins = "*")
 public class PublicServicesManagementController {
 
     private final ServicioService service;
@@ -34,7 +35,7 @@ public class PublicServicesManagementController {
     }
 
     @GetMapping("/{service_id}")
-    public ResponseEntity<String> getService(@PathVariable Int service_id) {
+    public ResponseEntity<String> getService(@PathVariable int service_id) {
         String ser = service.getService(service_id);
         if (ser != null) {
             return new ResponseEntity<>(ser, HttpStatus.OK);

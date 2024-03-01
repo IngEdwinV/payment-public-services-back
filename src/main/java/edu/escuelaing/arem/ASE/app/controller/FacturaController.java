@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/factura")
+@CrossOrigin(origins = "*")
 public class FacturaController {
 
     @Autowired
