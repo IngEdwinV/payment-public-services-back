@@ -34,7 +34,7 @@ public class PublicServicesManagementController {
     }
 
     @GetMapping("/{service_id}")
-    public ResponseEntity<String> getService(@PathVariable String service_id) {
+    public ResponseEntity<String> getService(@PathVariable Int service_id) {
         String ser = service.getService(service_id);
         if (ser != null) {
             return new ResponseEntity<>(ser, HttpStatus.OK);
