@@ -1,9 +1,14 @@
 package edu.escuelaing.arem.ASE.app.service;
 
 import edu.escuelaing.arem.ASE.app.model.ServicioModel;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+
+import com.mysql.cj.x.protobuf.MysqlxCrud.Limit;
 
 @Service
 public class ServicioService {
@@ -46,6 +51,17 @@ public class ServicioService {
         int filasAfectadas = jdbcTemplate.update(sql, serviceId);
 
         return filasAfectadas > 0;
+    }
+
+    public List<Object> getAllServices() {
+        String sql = "SELECT nombre FROM servicio";
+        
+        try {
+            return jdbcTemplate.query(sql, (rs, rowNum) -> rs.getString("nombre"));
+        } catch (Exception e) {
+            System.err.println("Error al obtener todos los servicios: " + e.getMessage());
+            return null;
+        }
     }
 
 }

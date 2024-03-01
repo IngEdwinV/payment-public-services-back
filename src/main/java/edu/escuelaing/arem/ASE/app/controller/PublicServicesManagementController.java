@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/services")
 public class PublicServicesManagementController {
@@ -49,6 +51,17 @@ public class PublicServicesManagementController {
             return new ResponseEntity<>("Usuario eliminado correctamente", HttpStatus.OK);
         } else {
             return new ResponseEntity<>("Usuario no encontrado", HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Object>> obtenerTodosServicios() {
+        List<Object> servicios = service.getAllServices();
+        
+        if (servicios != null) {
+            return new ResponseEntity<>(servicios, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
