@@ -3,6 +3,7 @@ package edu.escuelaing.arem.ASE.app.controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(value = "/services")
 public class PublicServicesManagementController {
 
     @PostMapping("/api/public_service/management/service")
