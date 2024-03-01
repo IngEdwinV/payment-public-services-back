@@ -3,6 +3,10 @@ package edu.escuelaing.arem.ASE.app.model;
 public class ServicioModel {
 
     private String nombre;
+    
+    public ServicioModel() {
+    }
+    
     public ServicioModel(String nombre) {
         this.nombre = nombre;
     }
