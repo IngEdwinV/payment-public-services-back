@@ -1,28 +1,54 @@
 package edu.escuelaing.arem.ASE.app.controller;
 
+import edu.escuelaing.arem.ASE.app.model.ServicioModel;
+import edu.escuelaing.arem.ASE.app.service.ServicioService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/services")
 public class PublicServicesManagementController {
 
-    @PostMapping("/api/public_service/management/service")
-    public String addService() {
-        return "Hola desde el controlador con anotaciones Spring!";
+    private final ServicioService service;
+
+    @Autowired
+    public PublicServicesManagementController(ServicioService service) {
+        this.service = service;
     }
 
-    @PutMapping("/api/public_service/management/{service_id}")
-    public String updateService(@PathVariable String service_id) {
-        return "Hola desde el controlador con anotaciones Spring!";
+    @PostMapping("/create")
+    public ResponseEntity<String> addService(@RequestBody ServicioModel servicioModel) {
+        service.createService(servicioModel);
+        return new ResponseEntity<>("servicio publico Creado", HttpStatus.CREATED);
     }
 
-    @GetMapping("/api/public_service/management/service/{service_id}")
-    public String getService(@PathVariable String service_id) {
-        return "Hola desde el controlador con anotaciones Spring!";
+    @PutMapping("/update/{service_id}")
+    public ResponseEntity<String> updateService(@PathVariable String service_id,
+                                                @RequestBody ServicioModel servicioModel) {
+        service.updateService(service_id, servicioModel);
+        return new ResponseEntity<>("servicio publico modificado", HttpStatus.OK);
     }
 
-    @DeleteMapping("/api/public_service/management/service/{service_id}")
-    public String deleteService(@PathVariable String service_id) {
-        return "Hola desde el controlador con anotaciones Spring!";
+    @GetMapping("/{service_id}")
+    public ResponseEntity<String> getService(@PathVariable String service_id) {
+        String ser = service.getService(service_id);
+        if (ser != null) {
+            return new ResponseEntity<>(ser, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("servicio no encontrado", HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/{service_id}")
+    public ResponseEntity<String> deleteService(@PathVariable String service_id) {
+        boolean delete = service.deleteService(service_id);
+
+        if (delete) {
+            return new ResponseEntity<>("Usuario eliminado correctamente", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Usuario no encontrado", HttpStatus.NOT_FOUND);
+        }
     }
 }

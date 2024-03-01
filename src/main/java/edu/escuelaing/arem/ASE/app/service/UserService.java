@@ -1,8 +1,7 @@
 package edu.escuelaing.arem.ASE.app.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -11,29 +10,29 @@ import edu.escuelaing.arem.ASE.app.model.usuario;
 @Service
 public class UserService {
 
-    @Autowired    
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public UserService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void create(usuario user){
+    public void create(usuario user) {
         String sql = "INSERT INTO usuario (id, nombre, apellido, password, correo, telefono, direccion, id_rol) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         jdbcTemplate.update(sql, preparedStatement -> {
-            preparedStatement.setInt(1, usuario.getId());
-            preparedStatement.setString(2, usuario.getNombre());
-            preparedStatement.setString(3, usuario.getApellido());
-            preparedStatement.setString(4, usuario.getPassword());
-            preparedStatement.setString(5, usuario.getCorreo());
-            preparedStatement.setString(6, usuario.getTelefono());
-            preparedStatement.setString(7, usuario.getDireccion());
-            preparedStatement.setInt(8, usuario.getIdRol());
+            preparedStatement.setInt(1, user.getId());
+            preparedStatement.setString(2, user.getNombre());
+            preparedStatement.setString(3, user.getApellido());
+            preparedStatement.setString(4, user.getPassword());
+            preparedStatement.setString(5, user.getCorreo());
+            preparedStatement.setString(6, user.getTelefono());
+            preparedStatement.setString(7, user.getDireccion());
+            preparedStatement.setInt(8, user.getIdRol());
         });
     }
 
-    public boolean login (String correo, String password){
+    public boolean login(String correo, String password) {
         String sql = "SELECT COUNT(*) FROM usuario WHERE correo = ? AND password = ?";
         int count = jdbcTemplate.queryForObject(sql, Integer.class, correo, password);
         return count > 0;
@@ -41,10 +40,10 @@ public class UserService {
 
     public String obtenerRolUsuario(String correo) {
         String sql = "SELECT r.rol " +
-                     "FROM usuario u " +
-                     "INNER JOIN rol r ON u.id_rol = r.id " +
-                     "WHERE u.correo = ?";
-        
+                "FROM usuario u " +
+                "INNER JOIN rol r ON u.id_rol = r.id " +
+                "WHERE u.correo = ?";
+
         try {
             return jdbcTemplate.queryForObject(sql, String.class, correo);
         } catch (Exception e) {
@@ -56,7 +55,19 @@ public class UserService {
     public boolean eliminarUsuarioPorCorreo(String correo) {
         String sql = "DELETE FROM usuario WHERE correo = ?";
         int filasAfectadas = jdbcTemplate.update(sql, correo);
-        
+
         return filasAfectadas > 0;
+    }
+
+    public usuario getUsuario(int userId) {
+        String sql = "SELECT * FROM usuario WHERE id = ?";
+
+        try {
+            // Utilizamos BeanPropertyRowMapper para mapear las filas de la consulta a un objeto Usuario
+            return jdbcTemplate.queryForObject(sql, new Object[]{userId}, new BeanPropertyRowMapper<>(usuario.class));
+        } catch (Exception e) {
+            System.err.println("No se encontró el usuario con ID '" + userId + "': " + e.getMessage());
+            return null;
+        }
     }
 }

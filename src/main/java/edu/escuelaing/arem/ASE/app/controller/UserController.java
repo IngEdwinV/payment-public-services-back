@@ -19,7 +19,7 @@ import edu.escuelaing.arem.ASE.app.service.UserService;
 @RequestMapping(value = "/users")
 public class UserController {
 
-    private UserService us;
+    private final UserService us;
 
     @Autowired
     public UserController(UserService usuarioDAO) {
