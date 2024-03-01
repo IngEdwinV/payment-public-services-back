@@ -11,6 +11,10 @@ public class usuario {
     private String direccion;
     private int id_rol;
 
+    public usuario(){
+        
+    }
+
     public usuario (int id, String nombre, String apellido, String password, String correo, String telefono, String direccion, int id_rol) {
         this.id = id;
         this.nombre = nombre;

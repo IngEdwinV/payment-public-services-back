@@ -1,5 +1,7 @@
 package edu.escuelaing.arem.ASE.app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -64,6 +66,17 @@ public class UserController {
             return new ResponseEntity<>("Usuario eliminado correctamente", HttpStatus.OK);
         } else {
             return new ResponseEntity<>("Usuario no encontrado", HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<?> getAll(){
+        List<Object> usuarios = us.obtenerTodosUsuarios();
+        
+        if (usuarios != null) {
+            return new ResponseEntity<>(usuarios, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
