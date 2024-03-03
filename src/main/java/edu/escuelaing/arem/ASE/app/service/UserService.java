@@ -30,7 +30,7 @@ public class UserService {
             preparedStatement.setString(5, user.getCorreo());
             preparedStatement.setString(6, user.getTelefono());
             preparedStatement.setString(7, user.getDireccion());
-            preparedStatement.setInt(8, user.getIdRol());
+            preparedStatement.setInt(8, 1);
         });
     }
 

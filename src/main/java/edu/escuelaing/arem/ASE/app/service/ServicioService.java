@@ -47,17 +47,23 @@ public class ServicioService {
     }
 
     public boolean deleteService(String serviceId) {
-        String sql = "DELETE FROM serviceId WHERE id = ?";
+        String sql = "DELETE FROM servicio WHERE id = ?";
         int filasAfectadas = jdbcTemplate.update(sql, serviceId);
 
         return filasAfectadas > 0;
     }
 
     public List<Object> getAllServices() {
-        String sql = "SELECT nombre FROM servicio";
+        String sql = "SELECT id,nombre FROM servicio";
         
         try {
-            return jdbcTemplate.query(sql, (rs, rowNum) -> rs.getString("nombre"));
+            return jdbcTemplate.query(sql, (rs, rowNum) -> {
+                ServicioModel servicioModel = new ServicioModel();
+                servicioModel.setId(rs.getInt("id"));
+                servicioModel.setNombre(rs.getString("nombre"));
+                return servicioModel;
+            });
+            //return jdbcTemplate.query(sql, (rs, rowNum) -> rs.getString("nombre"));
         } catch (Exception e) {
             System.err.println("Error al obtener todos los servicios: " + e.getMessage());
             return null;

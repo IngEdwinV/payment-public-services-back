@@ -49,9 +49,9 @@ public class PublicServicesManagementController {
         boolean delete = service.deleteService(service_id);
 
         if (delete) {
-            return new ResponseEntity<>("Usuario eliminado correctamente", HttpStatus.OK);
+            return new ResponseEntity<>("Servicio Eliminado correctamente", HttpStatus.OK);
         } else {
-            return new ResponseEntity<>("Usuario no encontrado", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Servicio no encontrado", HttpStatus.NOT_FOUND);
         }
     }
 
