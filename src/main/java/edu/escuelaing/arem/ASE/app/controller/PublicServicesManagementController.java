@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/services")
+@CrossOrigin(origins = "*")
 public class PublicServicesManagementController {
 
     private final ServicioService service;
@@ -34,7 +35,7 @@ public class PublicServicesManagementController {
     }
 
     @GetMapping("/{service_id}")
-    public ResponseEntity<String> getService(@PathVariable String service_id) {
+    public ResponseEntity<String> getService(@PathVariable int service_id) {
         String ser = service.getService(service_id);
         if (ser != null) {
             return new ResponseEntity<>(ser, HttpStatus.OK);
@@ -48,9 +49,9 @@ public class PublicServicesManagementController {
         boolean delete = service.deleteService(service_id);
 
         if (delete) {
-            return new ResponseEntity<>("Usuario eliminado correctamente", HttpStatus.OK);
+            return new ResponseEntity<>("Servicio Eliminado correctamente", HttpStatus.OK);
         } else {
-            return new ResponseEntity<>("Usuario no encontrado", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Servicio no encontrado", HttpStatus.NOT_FOUND);
         }
     }
 

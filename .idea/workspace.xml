@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0e961b73-337b-46bb-a297-b3cc063d0187" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/MockPagos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/model/RespuestaPago.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/model/TxrModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/configuration/InternalConstantValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/configuration/InternalConstantValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/controller/FacturaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/controller/FacturaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/model/Factura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/model/Factura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/model/usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/model/usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/service/FacturaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/service/FacturaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/service/TransaccionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/service/TransaccionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arem/ASE/app/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/configuration/InternalConstantValue$EstadoFactura.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/configuration/InternalConstantValue$EstadoFactura.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/configuration/InternalConstantValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/configuration/InternalConstantValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/controller/FacturaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/controller/FacturaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/controller/PaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/controller/PaymentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/model/Factura.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/model/Factura.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/model/usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/model/usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/service/FacturaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/service/FacturaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/service/ServicioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/service/ServicioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/service/TransaccionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/service/TransaccionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arem/ASE/app/service/UserService.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2d4S2UVQ5WWFmCNjXq0qpIvoWd3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.Application.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/evasquez/payment-public-services-back",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="payment-public-service-back" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="edu.escuelaing.arem.ASE.app.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-11.0.21-corretto-11.0.21-3183f394aec4-26afc3bf" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-53826d6a" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0e961b73-337b-46bb-a297-b3cc063d0187" name="Changes" comment="" />
+      <created>1709265651115</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709265651115</updated>
+      <workItem from="1709265652242" duration="11759000" />
+      <workItem from="1709324130612" duration="1012000" />
+      <workItem from="1709494416767" duration="490000" />
+      <workItem from="1709498432330" duration="14309000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

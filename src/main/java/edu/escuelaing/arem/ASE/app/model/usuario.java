@@ -9,7 +9,7 @@ public class usuario {
     private String correo;
     private String telefono;
     private String direccion;
-    private int id_rol;
+    private int idRol;
 
     public usuario(){
         
@@ -23,7 +23,7 @@ public class usuario {
         this.correo = correo;
         this.telefono = telefono;
         this.direccion = direccion;
-        this.id_rol = id_rol;
+        this.idRol = id_rol;
     }
 
     // Getters
@@ -56,7 +56,7 @@ public class usuario {
     }
 
     public  int getIdRol() {
-        return id_rol;
+        return idRol;
     }
 
     // Setters
@@ -89,7 +89,7 @@ public class usuario {
     }
 
     public void setIdRol(int id_rol) {
-        this.id_rol = id_rol;
+        this.idRol = id_rol;
     }
 
 }

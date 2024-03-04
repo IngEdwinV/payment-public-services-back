@@ -2,6 +2,7 @@ package edu.escuelaing.arem.ASE.app.service;
 
 import java.util.List;
 
+import edu.escuelaing.arem.ASE.app.excepcion.Exception;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -30,7 +31,7 @@ public class UserService {
             preparedStatement.setString(5, user.getCorreo());
             preparedStatement.setString(6, user.getTelefono());
             preparedStatement.setString(7, user.getDireccion());
-            preparedStatement.setInt(8, user.getIdRol());
+            preparedStatement.setInt(8, 1);
         });
     }
 
@@ -85,12 +86,20 @@ public class UserService {
                 usuario.setCorreo(rs.getString("correo"));
                 usuario.setTelefono(rs.getString("telefono"));
                 usuario.setDireccion(rs.getString("direccion"));
-                // Puedes agregar más atributos según la estructura de tu tabla
                 return usuario;
             });
         } catch (Exception e) {
             System.err.println("Error al obtener todos los usuarios: " + e.getMessage());
             return null;
         }
+    }
+
+    public void updateRolUsuario(int userId, int idRol) {
+        if(getUsuario(userId) == null)
+            throw new Exception.UsuarioNotFoundException("No se encontró el usuario con ID: " + userId);
+
+        String sql = "UPDATE usuario SET id_rol = ? WHERE id = ?";
+
+        jdbcTemplate.update(sql, idRol, userId);
     }
 }

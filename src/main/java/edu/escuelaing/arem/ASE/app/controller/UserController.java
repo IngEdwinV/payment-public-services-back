@@ -5,13 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import edu.escuelaing.arem.ASE.app.model.LoginUser;
 import edu.escuelaing.arem.ASE.app.model.usuario;
@@ -19,6 +13,7 @@ import edu.escuelaing.arem.ASE.app.service.UserService;
 
 @RestController
 @RequestMapping(value = "/users")
+@CrossOrigin(origins = "*")
 public class UserController {
 
     private final UserService us;
@@ -29,7 +24,7 @@ public class UserController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<String> create(@RequestBody usuario user){
+    public ResponseEntity<String> create(@RequestBody usuario user) {
         us.create(user);
         return new ResponseEntity<>("Usuario Creado", HttpStatus.CREATED);
     }
@@ -50,7 +45,7 @@ public class UserController {
     @GetMapping("/{correo}/rol")
     public ResponseEntity<String> obtenerRolUsuario(@PathVariable String correo) {
         String rol = us.obtenerRolUsuario(correo);
-        
+
         if (rol != null) {
             return new ResponseEntity<>(rol, HttpStatus.OK);
         } else {
@@ -61,7 +56,7 @@ public class UserController {
     @DeleteMapping("/{correo}")
     public ResponseEntity<String> eliminarUsuario(@PathVariable String correo) {
         boolean eliminado = us.eliminarUsuarioPorCorreo(correo);
-        
+
         if (eliminado) {
             return new ResponseEntity<>("Usuario eliminado correctamente", HttpStatus.OK);
         } else {
@@ -70,13 +65,19 @@ public class UserController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<?> getAll(){
+    public ResponseEntity<?> getAll() {
         List<Object> usuarios = us.obtenerTodosUsuarios();
-        
+
         if (usuarios != null) {
             return new ResponseEntity<>(usuarios, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+
+    @PutMapping("/update_rol")
+    public ResponseEntity<String> updateRol(@RequestBody usuario user) {
+        us.updateRolUsuario(user.getId(), user.getIdRol());
+        return new ResponseEntity<>("Rol actualizado correctamente", HttpStatus.OK);
     }
 }

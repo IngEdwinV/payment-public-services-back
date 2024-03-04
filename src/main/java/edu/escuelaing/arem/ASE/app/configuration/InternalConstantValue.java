@@ -5,6 +5,14 @@ public class InternalConstantValue {
         ACTIVO,
         INACTIVO,
         VENCIDA,
-        PAGADO
+        PAGADO,
+        NO_PAGADO
+    }
+
+    public enum EstadoTrx {
+        OK,
+        FALLIDO,
+        PAGO_TARDE,
+        PENDIENTE
     }
 }

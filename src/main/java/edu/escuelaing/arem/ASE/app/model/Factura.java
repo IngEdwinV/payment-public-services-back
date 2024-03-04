@@ -7,6 +7,7 @@ import java.util.Date;
 
 public class Factura {
 
+    private int id;
     private int idUsuario;
     private int idServicio;
     private BigDecimal valor;
@@ -23,7 +24,8 @@ public class Factura {
     }
 
     // Constructor con parámetros
-    public Factura(int idUsuario, int idServicio, BigDecimal valor, EstadoFactura estado, Date fechaFactura) {
+    public Factura(int id,int idUsuario, int idServicio, BigDecimal valor, EstadoFactura estado, Date fechaFactura) {
+        this.id = id;
         this.idUsuario = idUsuario;
         this.idServicio = idServicio;
         this.valor = valor;
@@ -75,6 +77,15 @@ public class Factura {
 
     // Puedes agregar otros métodos o validaciones según tus necesidades
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Factura{" +
@@ -87,4 +98,3 @@ public class Factura {
                 '}';
     }
 }
-
