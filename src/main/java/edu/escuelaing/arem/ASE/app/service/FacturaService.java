@@ -8,7 +8,10 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+<<<<<<< HEAD
 import java.util.List;
+=======
+>>>>>>> ae5648810da76d6b1196c36273d75e64520bd140
 import java.util.Objects;
 
 @Service
@@ -36,15 +39,27 @@ public class FacturaService {
         if (!servicioExiste(factura.getIdServicio())) {
             throw new Exception.ServicioNotFoundException("No se encontró el servicio con ID: " + factura.getIdServicio());
         }
+<<<<<<< HEAD
 
         String sql = "INSERT INTO factura (id_usuario, id_servicio, valor, estado, fecha_factura) " +
                 "VALUES (?, ?, ?, ?, ?)";
+=======
+
+        // Puedes agregar más validaciones según tus necesidades
+
+        String sql = "INSERT INTO factura (id, id_usuario, id_servicio, valor, estado, fecha_factura) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?)";
+>>>>>>> ae5648810da76d6b1196c36273d75e64520bd140
 
         jdbcTemplate.update(sql, new Object[]{
                 factura.getIdUsuario(),
                 factura.getIdServicio(),
                 factura.getValor(),
+<<<<<<< HEAD
                 InternalConstantValue.EstadoFactura.ACTIVO.toString(),
+=======
+                InternalConstantValue.EstadoFactura.ACTIVO,
+>>>>>>> ae5648810da76d6b1196c36273d75e64520bd140
                 factura.getFechaFactura(),
         });
     }
@@ -103,8 +118,13 @@ public class FacturaService {
     }
 
     private Boolean servicioExiste(int serviceId) {
+<<<<<<< HEAD
         String serv = service.getService(serviceId);
         return Objects.nonNull(serv);
+=======
+        String serv =service.getService(serviceId);
+        return Objects.equals(serv, serviceId);
+>>>>>>> ae5648810da76d6b1196c36273d75e64520bd140
     }
 }
 

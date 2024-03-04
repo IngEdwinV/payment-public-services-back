@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+<<<<<<< HEAD
+=======
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+>>>>>>> ae5648810da76d6b1196c36273d75e64520bd140
 @RestController
 @RequestMapping(value = "/payments")
 @CrossOrigin(origins = "*")
